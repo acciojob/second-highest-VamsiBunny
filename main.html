@@ -9,9 +9,24 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
-			
-		}
+       if (arr.length < 2) {
+        return -Infinity;
+    }
+
+     
+    const uniqueValues = new Set(arr);
+    
+    
+    if (uniqueValues.size < 2) {
+        return -Infinity;
+    }
+
+     
+    const sortedUniqueValues = Array.from(uniqueValues).sort((a, b) => b - a);
+    
+    
+    return sortedUniqueValues[1];
+}
 
 		function Main() {
 			var n = prompt("Enter the number of elements");
